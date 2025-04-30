@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Victoria's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bubble-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="hero-section">
+
+  <canvas class="confetti-canvas"></canvas>
+
+  <script>
+  const confettiCanvas = document.querySelector('.confetti-canvas');
+  const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+  function continuousConfetti() {
+    myConfetti({
+      particleCount: 5,
+      spread: 90,
+      startVelocity: 30,
+      origin: {
+        x: Math.random(),
+        y: 0
+      },
+      ticks: 300,
+      gravity: 0.5,
+      scalar: 1.5,
+      colors: ['#ff69b4', '#ffd700', '#87cefa', '#ffffff']
+    });
+  }
+
+  // Start the loop
+  setInterval(continuousConfetti, 150);
+</script>
+
+  <header class="hero-section">
+    <h1>Welcome to My Portfolio!</h1>
+    <p>Click an image to explore what I've created!</p>
+    <div class="button-group">
+        <a href="sketch_1.html">
+            <img src="Line.png" alt="Line Sketch" class="btn-image">
+        </a>
+        <a href="sketch_2.html">
+            <img src="Fishy.png" alt="Fishing" class="btn-image">
+        </a>
+        <a href="sketch_3.html">
+            <img src="Fireworks.png" alt="Fireworks" class="btn-image">
+        </a>
+      </div>
+  </header>
+
+  
+
+</body>
+</html>
